@@ -1,22 +1,22 @@
+// App.js
 import './App.css';
-import { LoginComponent } from './Components/loginPage.js';
-import { CreateAccount } from './Components/createAccountPage.js';
-import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { LoginComponent } from './Components/loginPage';
+import { CreateAccount } from './Components/createAccountPage';
+import { Home } from './Components/Home.js'; // Create this if you haven’t
 
 function App() {
-  const [showCreateAccount, setShowCreateAccount] = useState(false);
-
   return (
-    <div className="App">
-      <header className="App-header"></header>
-      <div>
-        {showCreateAccount ? (
-          <CreateAccount setShowCreateAccount={setShowCreateAccount} />
-        ) : (
-          <LoginComponent setShowCreateAccount={setShowCreateAccount} />
-        )}
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Navigate to="/login" />} />
+          <Route path="/login" element={<LoginComponent />} />
+          <Route path="/create" element={<CreateAccount />} />
+          <Route path="/home" element={<Home />} />
+        </Routes>
       </div>
-    </div>
+    </Router>
   );
 }
 

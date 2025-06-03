@@ -1,0 +1,27 @@
+.home-dashboard {
+    background-color: black;
+}
+
+.product-grid {
+  padding-left: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  gap: 20px;
+}
+
+.product-card {
+  background: grey;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+  width: 200px;
+  height: 100px;
+}
+
+.Home-Main-Container {
+  background-color: lightgrey;
+  justify-content: center;
+}
