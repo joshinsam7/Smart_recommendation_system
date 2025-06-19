@@ -27,7 +27,6 @@ function Home() {
 
     const handleLike = (asin, name, element) => {
         console.log("Like button clicked for ASIN:", name);
-        // const x = document.querySelector(`.fa-thumbs-up`);
         element.classList.toggle("fa-thumbs-down");
 
         fetch(`http://localhost:8383/api/products/like/${asin}`, {
@@ -39,7 +38,6 @@ function Home() {
         .then(res => res.json())
         .then(data => {
             console.log("Like response:", data);
-            // Optionally, you can update the UI or state here
         })
         .catch(err => {
             console.error("Error liking product:", err);
@@ -48,7 +46,6 @@ function Home() {
 
     return (
         <div className='Home-Main-Container'>
-            {/* top panel */}
             <div className='home-dashboard'>
                 <input type='text' placeholder='Search' />
                 <button className="home-button-search" onClick={handleSearch}>Go</button>
